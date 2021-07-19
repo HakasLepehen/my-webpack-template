@@ -2,6 +2,8 @@ const path = require("path");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -25,8 +27,8 @@ module.exports = {
   context: path.resolve(__dirname),
   entry: path.join(__dirname, "src/js", "index.js"),
   output: {
-    filename: `js/${filename('js')}`,
-    path: path.resolve(__dirname, "dist")
+    filename: `./js/${filename('js')}`,
+    path: path.resolve(__dirname, "app")
   },
 
   optimization: optimization(),
@@ -39,7 +41,20 @@ module.exports = {
       minify: {
           collapseWhitespace: isDev
       },
-      publicPath: 'src'
+      publicPath: ''
     }),
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+        filename: `./css/${filename('css')}`
+    })
   ],
+
+  module: {
+    rules: [
+        {
+          test: /\.css$/i,
+          use: [MiniCssExtractPlugin.loader, "css-loader"],
+        },
+      ],
+  }
 };
