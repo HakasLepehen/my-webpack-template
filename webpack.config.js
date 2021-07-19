@@ -25,8 +25,8 @@ module.exports = {
   context: path.resolve(__dirname),
   entry: path.join(__dirname, "src/js", "index.js"),
   output: {
-    filename: `src/js/${filename('js')}`,
-    path: path.resolve(__dirname, "dist"),
+    filename: `js/${filename('js')}`,
+    path: path.resolve(__dirname, "dist")
   },
 
   optimization: optimization(),
@@ -38,7 +38,8 @@ module.exports = {
       filename: "index.html",
       minify: {
           collapseWhitespace: isDev
-      }
+      },
+      publicPath: 'src'
     }),
   ],
 };
