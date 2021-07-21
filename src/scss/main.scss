@@ -1,5 +1,14 @@
 @import '~normalize.css';
 
-body {
-    background-color: royalblue;
+@font-face {
+    font-family: 'ZenLoopRegular';
+    src: url('../fonts/ZenLoop-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+.text {
+    font-family: ZenLoopRegular;
+    height: 100%;
+    width: 100%;
 }
