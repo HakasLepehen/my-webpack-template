@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HakasLepehen/webpack-lessons.git"
+    "url": "git+https://github.com/HakasLepehen/my-webpack-template.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/HakasLepehen/webpack-lessons/issues"
+    "url": "https://github.com/HakasLepehen/my-webpack-template/issues"
   },
-  "homepage": "https://github.com/HakasLepehen/webpack-lessons#readme",
+  "homepage": "https://github.com/HakasLepehen/my-webpack-template#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "copy-webpack-plugin": "^9.0.1",
