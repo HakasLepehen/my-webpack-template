@@ -3,12 +3,16 @@
 @font-face {
     font-family: 'ZenLoopRegular';
     src: url('../fonts/ZenLoop-Regular.ttf') format('truetype');
-    font-style: normal;
-    font-weight: normal;
+}
+ 
+
+body {
+    background-image: url('../img/birthday-1061.jpeg');
+    font-family: 'ZenLoopRegular';
 }
 
 .text {
-    font-family: ZenLoopRegular;
+    font-size: 24px;
     height: 100%;
     width: 100%;
 }

@@ -3,7 +3,6 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const { resourceUsage } = require("process");
 
 const filename = (ext) =>
   isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`;
@@ -79,27 +78,11 @@ module.exports = {
       },
       {
         test: /\.(?:|gif|png|ico|jpg|jpeg|svg)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: `[name].[ext]`,
-              outputPath: `./img/`,
-            },
-          },
-        ],
+        type: 'asset/resource',
       },
       {
         test: /\.(?:|woff2|woff|ttf)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: `[name].[ext]`,
-              outputPath: `./fonts/`,
-            },
-          },
-        ],
+        type: 'asset/resource',
       },
     ],
   },
